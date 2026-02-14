@@ -1,0 +1,37 @@
+---
+import { Badge } from '@/components/ui/badge';
+
+const skills = [
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Node.js',
+  'Python',
+  'AWS',
+  'Docker',
+  'PostgreSQL',
+];
+---
+
+<section id="about" class="py-12">
+  <h2 class="text-2xl font-semibold mb-6 text-foreground">About</h2>
+  <div class="space-y-4">
+    <p class="text-muted-foreground leading-relaxed">
+      I'm a software developer with a passion for building clean, efficient, and user-friendly applications. 
+      I specialize in full-stack development with modern technologies.
+    </p>
+    <p class="text-muted-foreground leading-relaxed">
+      When I'm not coding, you can find me exploring new technologies, contributing to open source, 
+      or sharing knowledge with the developer community.
+    </p>
+  </div>
+  
+  <div class="mt-8">
+    <h3 class="text-sm font-medium mb-3 text-foreground">Tech Stack</h3>
+    <div class="flex flex-wrap gap-2">
+      {skills.map((skill) => (
+        <Badge variant="secondary">{skill}</Badge>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,68 @@
+---
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Github, ExternalLink } from 'lucide-react';
+
+const projects = [
+  {
+    title: 'Project One',
+    description: 'A brief description of this project and what it does.',
+    tags: ['React', 'Node.js', 'PostgreSQL'],
+    github: 'https://github.com',
+    demo: '#',
+  },
+  {
+    title: 'Project Two',
+    description: 'Another project showcasing different technologies and features.',
+    tags: ['TypeScript', 'Next.js', 'AWS'],
+    github: 'https://github.com',
+    demo: '#',
+  },
+  {
+    title: 'Project Three',
+    description: 'A side project exploring new technologies.',
+    tags: ['Python', 'Docker', 'GraphQL'],
+    github: 'https://github.com',
+    demo: '#',
+  },
+];
+---
+
+<section id="projects" class="py-12">
+  <h2 class="text-2xl font-semibold mb-6 text-foreground">Projects</h2>
+  
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+    {projects.map((project) => (
+      <Card className="bg-card border-border">
+        <CardHeader>
+          <CardTitle className="text-foreground">{project.title}</CardTitle>
+          <CardDescription className="text-muted-foreground">
+            {project.description}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <Badge variant="outline">{tag}</Badge>
+            ))}
+          </div>
+        </CardContent>
+        <CardFooter className="gap-2">
+          <a href={project.github} target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="sm">
+              <Github className="mr-2 h-4 w-4" />
+              Code
+            </Button>
+          </a>
+          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+            <Button variant="ghost" size="sm">
+              <ExternalLink className="mr-2 h-4 w-4" />
+              Demo
+            </Button>
+          </a>
+        </CardFooter>
+      </Card>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,26 @@
+---
+import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
+---
+
+<section class="py-12 md:py-20">
+  <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-foreground mb-4">
+    James Etchells
+  </h1>
+  <p class="text-xl md:text-2xl text-muted-foreground mb-8 max-w-xl">
+    Software Developer building elegant solutions to complex problems.
+  </p>
+  <div class="flex flex-wrap gap-4">
+    <a href="#projects">
+      <Button size="lg">
+        View Projects
+        <ArrowRight className="ml-2 h-4 w-4" />
+      </Button>
+    </a>
+    <a href="mailto:etch@jamesetchells.com">
+      <Button variant="outline" size="lg">
+        Get in Touch
+      </Button>
+    </a>
+  </div>
+</section>

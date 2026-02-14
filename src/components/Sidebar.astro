@@ -1,0 +1,75 @@
+---
+import { Button } from '@/components/ui/button';
+import { Github, Mail, Home } from 'lucide-react';
+
+const navItems = [
+  { href: '/', label: 'Home', icon: Home },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+];
+
+const socialLinks = [
+  { href: 'https://github.com/Etchmon', label: 'GitHub', icon: Github },
+  { href: 'mailto:etch@jamesetchells.com', label: 'Email', icon: Mail },
+];
+---
+
+<aside class="fixed left-0 top-0 z-40 h-screen w-64 border-r border-border bg-card hidden md:block">
+  <div class="flex h-16 items-center border-b border-border px-6">
+    <a href="/" class="text-xl font-bold text-foreground">
+      James Etchells
+    </a>
+  </div>
+  
+  <nav class="space-y-1 p-4">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+  
+  <div class="absolute bottom-4 left-0 right-0 px-4">
+    <div class="space-y-2">
+      {socialLinks.map((link) => (
+        <a
+          href={link.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          {link.icon && <link.icon className="h-4 w-4" />}
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</aside>
+
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card">
+  <nav class="flex justify-around p-2">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class="flex flex-col items-center gap-1 rounded-md px-3 py-2 text-xs font-medium text-muted-foreground"
+      >
+        {item.icon && <item.icon className="h-5 w-5" />}
+        {item.label}
+      </a>
+    ))}
+    {socialLinks.map((link) => (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex flex-col items-center gap-1 rounded-md px-3 py-2 text-xs font-medium text-muted-foreground"
+      >
+        {link.icon && <link.icon className="h-5 w-5" />}
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</div>
